@@ -1,8 +1,10 @@
-# 主从配置
+# MYSQL主从1 - 配置
 
 ## 1、连接到master的mysql，并创建用于从机同步连接的账号
 
 ``` sql
+
+
 # 创建用于slave连接的账号
 create user 'slave'@'%' identified by '123456';
 
