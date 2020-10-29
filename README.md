@@ -2,7 +2,7 @@
 
 ### 包含容器
 
-* 1cluster1和cluster2中分别包含3个mysql容器，一个master和两个slave
+* cluster1和cluster2中分别包含3个mysql容器，一个master和两个slave
 * mycat1和mycat2
 * haproxy
 
