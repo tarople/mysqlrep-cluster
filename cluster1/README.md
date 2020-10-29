@@ -2,7 +2,15 @@
 
 > 一主二从
 
-## 1、连接到master的mysql，并创建用于从机同步连接的账号
+## 1、在当前目录下创建mysql数据存储目录
+
+``` bash
+
+mkdir master/data slave1/data slave2/data
+
+```
+
+## 2、连接到master的mysql，并创建用于从机同步连接的账号
 
 ``` sql
 
@@ -19,7 +27,8 @@ flush privileges;
 show master status;
 
 ```
-## 2、连接slave的mysql
+
+## 3、连接slave的mysql
 
 ```sql
 CHANGE MASTER TO 
