@@ -1,4 +1,4 @@
-# 基于haproxy、mycat、mysql主从集群
+# docker-compose haproxy、mycat、mysql主从集群
 
 ### 包含容器
 
