@@ -10,9 +10,21 @@ mkdir master/data slave1/data slave2/data
 
 ```
 
-## 2、连接到master的mysql，并创建用于从机同步连接的账号
+## 2、启动容器
+
+``` bash
+
+# 可根据自身主机情况修改映射的端口号
+docker-composer build
+docker-composer up
+
+```
+
+## 3、连接到master的mysql，并创建用于从机同步连接的账号
 
 ``` sql
+
+
 # 创建用于slave连接的账号
 create user 'slave'@'%' identified by '123456';
 
@@ -26,21 +38,22 @@ show master status;
 
 ```
 
-## 3、连接slave的mysql
+## 4、连接slave的mysql
 
 ```sql
+
+# master_host和master_port 视自己主机ip和端口填写
+# master_log_file和master_log_pos 可以通过在master中show master status查看到
+
 CHANGE MASTER TO 
 master_host='192.168.0.104',  
-master_port=13306, 
+master_port=23306, 
 master_user='slave', 
 master_password='123456', 
 master_log_file='mysql-bin.000003', 
 master_log_pos=925;
 
-# master_log_file和master_log_pos 可以通过在master中show master status查看到
-
 # 启动slave
-
 start slave;
 
 # 查看slave状态
