@@ -1,0 +1,47 @@
+version: '3'
+services: 
+  cluster2-master:
+    build: 
+      context: ./
+      dockerfile: ./Dockerfile 
+    container_name: cluster2-master
+    volumes: 
+      - ./master/conf:/etc/my.cnf.d
+      - ./master/data:/var/lib/mysql      
+    ports:
+      - "23306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root  
+    ulimits: 
+        nproc: 65535     
+    restart: always
+  cluster2-slave-1:
+    build: 
+      context: ./
+      dockerfile: slave1/Dockerfile 
+    container_name: cluster2-slave-1
+    volumes: 
+      - ./slave1/conf:/etc/my.cnf.d
+      - ./slave1/data:/var/lib/mysql      
+    ports:
+      - "23307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root  
+    ulimits: 
+        nproc: 65535     
+    restart: always
+  cluster2-slave-2:
+      build: 
+        context: ./
+        dockerfile: slave2/Dockerfile 
+      container_name: cluster2-slave-2
+      volumes: 
+        - ./slave2/conf:/etc/my.cnf.d
+        - ./slave2/data:/var/lib/mysql      
+      ports:
+        - "23308:3306"
+      environment:
+        MYSQL_ROOT_PASSWORD: root  
+      ulimits: 
+          nproc: 65535     
+      restart: always

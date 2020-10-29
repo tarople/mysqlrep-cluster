@@ -1,0 +1,2 @@
+FROM haproxy:1.9.3
+EXPOSE 4001 4002

@@ -1,0 +1,10 @@
+cluster1/master/data/*
+cluster1/slave1/data/*
+cluster1/slave2/data/*
+
+cluster2/master/data/*
+cluster2/slave1/data/*
+cluster2/slave2/data/*
+
+mycat1/logs/*
+mycat2/logs/*

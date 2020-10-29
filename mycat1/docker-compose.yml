@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mycat-1:
+    build: 
+      context: ./
+      dockerfile: ./Dockerfile 
+    container_name: mycat-1
+    volumes:
+      - ./config/:/mycat/conf/:ro
+      - ./logs/:/mycat/logs/:rw            
+    ports:
+      - "8066:8066"
+      - "9066:9066"
+    ulimits:
+      nproc: 65535
+    hostname: mycat1
+#    mem_limit: 1024m
+    restart: always
