@@ -27,4 +27,4 @@ git clone https://github.com/tarople/mysqlrep-cluster.git
 ### 启动容器
 
 > 1、进入子目录
-> 2、启动顺序为[cluster1](https://github.com/tarople/mysqlrep-cluster/tree/master/cluster1)、[cluster2](https://github.com/tarople/mysqlrep-cluster/tree/master/cluster2) -> mycat1、mycat2 -> haproxy
+> 2、启动顺序为[cluster1](https://github.com/tarople/mysqlrep-cluster/tree/master/cluster1)、[cluster2](https://github.com/tarople/mysqlrep-cluster/tree/master/cluster2) -> [mycat1](https://github.com/tarople/mysqlrep-cluster/tree/master/mycat1)、[mycat2](https://github.com/tarople/mysqlrep-cluster/tree/master/mycat2) -> [haproxy](https://github.com/tarople/mysqlrep-cluster/tree/master/haproxy)
