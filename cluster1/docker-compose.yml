@@ -18,7 +18,7 @@ services:
   cluster1-slave-1:
     build: 
       context: ./
-      dockerfile: slave1/Dockerfile 
+      dockerfile: ./Dockerfile 
     container_name: cluster1-slave-1
     volumes: 
       - ./slave1/conf:/etc/my.cnf.d
@@ -33,7 +33,7 @@ services:
   cluster1-slave-2:
       build: 
         context: ./
-        dockerfile: slave2/Dockerfile 
+        dockerfile: ./Dockerfile 
       container_name: cluster1-slave-2
       volumes: 
         - ./slave2/conf:/etc/my.cnf.d
